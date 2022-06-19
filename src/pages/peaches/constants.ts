@@ -19,8 +19,8 @@ export const Constants = {
   },
   contact: {
     call: {
-      display: '206-383-8736',
-      href: 'tel:2063838736',
+      display: '303-748-1036',
+      href: 'tel:3037481036',
     },
     email: {
       display: 'NoonCRSecretary@gmail.com',

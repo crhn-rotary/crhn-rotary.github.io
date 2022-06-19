@@ -13,7 +13,7 @@ export const About: React.FC = () => (
   <EuiSplitPanel.Outer>
     <EuiSplitPanel.Inner color="subdued">
       <EuiSplitPanel.Outer hasBorder={false} hasShadow={false} direction="row">
-        <EuiSplitPanel.Inner color="subdued">
+        <EuiSplitPanel.Inner color="subdued" paddingSize="none">
           <EuiText>
             <h1>{useLocale('about.title')}</h1>
             <p>{useLocale('about.desc.1')}</p>

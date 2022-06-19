@@ -31,7 +31,7 @@ export const Steps: React.FC = () => {
 
   return (
     <EuiSplitPanel.Outer id="steps">
-      <EuiSplitPanel.Inner color="subdued">
+      <EuiSplitPanel.Inner color="subdued" paddingSize="none">
         <EuiSplitPanel.Outer color="subdued" direction="row" hasShadow={false}>
           <EuiSplitPanel.Inner>
             <EuiTitle>
