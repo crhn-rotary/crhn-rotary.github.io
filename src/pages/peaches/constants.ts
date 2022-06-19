@@ -28,10 +28,10 @@ export const Constants = {
     },
   },
   dates: {
-    afterPickup: moment('2022-08-28 MST'),
-    allowOrders: moment('2022-06-15 MST'),
-    blockOrders: moment('2022-08-17 MST'),
-    nextYear: moment('2023-06-15 MST'),
+    afterPickup: moment('2022-08-28T00:00:00.000-0600'),
+    allowOrders: moment('2022-06-15T00:00:00.000-0600'),
+    blockOrders: moment('2022-08-16T00:00:00.000-0600'),
+    nextYear: moment('2023-06-15T00:00:00.000-0600'),
     pickup: moment('2022-08-27T10:00:00.000-0600'),
   },
   location: {
