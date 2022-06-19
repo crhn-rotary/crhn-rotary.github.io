@@ -1,0 +1,1 @@
+export { PeachesPage } from './peaches';

@@ -1,0 +1,43 @@
+{
+  "name": "crhn-rotary.github.io",
+  "version": "0.9.0",
+  "homepage": "https://crhn-rotary.github.io/",
+  "dependencies": {
+    "@elastic/datemath": "^5.0.3",
+    "@elastic/eui": "^59.0.0",
+    "@emotion/react": "^11.9.0",
+    "calendar-link": "^2.2.0",
+    "moment": "^2.29.3",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/moment": "^2.13.0",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "prettier": "^2.6.2",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.7.3"
+  },
+  "scripts": {
+    "clean": "rm -rf docs",
+    "start": "react-scripts start",
+    "build": "yarn clean && react-scripts build && mv build docs && cp CNAME docs/",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "yarn@3.2.1"
+}
