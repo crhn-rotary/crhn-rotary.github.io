@@ -3,16 +3,20 @@ import {
   EuiFlexGroup,
   EuiFlexItem,
   EuiImage,
+  EuiSpacer,
   EuiSplitPanel,
   EuiText,
 } from '@elastic/eui';
 import { Locale, useLocale } from '../../components';
 import { Constants } from './constants';
 
+/**
+ * `About` shows a constant about section describing the club.
+ */
 export const About: React.FC = () => (
   <EuiSplitPanel.Outer>
     <EuiSplitPanel.Inner color="subdued">
-      <EuiSplitPanel.Outer hasBorder={false} hasShadow={false} direction="row">
+      <EuiSplitPanel.Outer direction="row" hasBorder={false} hasShadow={false}>
         <EuiSplitPanel.Inner color="subdued" paddingSize="none">
           <EuiText>
             <h1>{useLocale('about.title')}</h1>
@@ -44,6 +48,7 @@ export const About: React.FC = () => (
             ))}
         </ul>
       </EuiText>
+      <EuiSpacer size="s" />
     </EuiSplitPanel.Inner>
     <EuiSplitPanel.Inner color="subdued">
       <EuiText>
