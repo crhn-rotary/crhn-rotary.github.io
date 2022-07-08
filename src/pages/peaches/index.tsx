@@ -26,20 +26,27 @@ export const PeachesPage: React.FC = () => {
     loadContextForNow()
   );
 
-  // update 'now' every 10s so that we can properly disable ordering
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const newContext = loadContextForNow(moment('2022-09-20'));
+  // update 'now' every 1m so that we can properly disable ordering
+  useEffect(() => {
+    if (!context.afterPickup) {
+      // how many minutes until the top of the next hour
+      const minutes = 60 - context.now.minutes();
 
-  //     // avoid re-rendering anything if nothing changes
-  //     if (
-  //       newContext.afterPickup !== context.afterPickup ||
-  //       newContext.canOrder !== context.canOrder
-  //     ) {
-  //       setContext(newContext);
-  //     }
-  //   }, 10000);
-  // }, [context]);
+      console.log(`Updating context in [${minutes}] minutes`);
+
+      setTimeout(() => {
+        const newContext = loadContextForNow(moment());
+
+        // avoid re-rendering anything if nothing changes
+        if (
+          newContext.afterPickup !== context.afterPickup ||
+          newContext.canOrder !== context.canOrder
+        ) {
+          setContext(newContext);
+        }
+      }, minutes * 60 * 1000);
+    }
+  }, [context]);
 
   let pageText = text.afterPickup;
 
@@ -50,39 +57,14 @@ export const PeachesPage: React.FC = () => {
   }
 
   return (
-    <>
-      <EuiFlexGroup>
-        <EuiFlexItem grow={false}>
-          <EuiButton
-            onClick={() => setContext(loadContextForNow(moment('2022-07-01')))}
-          >
-            Can Order
-          </EuiButton>
-        </EuiFlexItem>
-        <EuiFlexItem grow={false}>
-          <EuiButton
-            onClick={() => setContext(loadContextForNow(moment('2022-08-20')))}
-          >
-            Block Order
-          </EuiButton>
-        </EuiFlexItem>
-        <EuiFlexItem grow={false}>
-          <EuiButton
-            onClick={() => setContext(loadContextForNow(moment('2022-09-20')))}
-          >
-            After Pickup
-          </EuiButton>
-        </EuiFlexItem>
-      </EuiFlexGroup>
-      <PeachesContext.Provider value={context}>
-        <EuiContext i18n={{ mapping: pageText }}>
-          <Intro />
-          <EuiSpacer />
-          <Steps />
-          <EuiSpacer />
-          <About />
-        </EuiContext>
-      </PeachesContext.Provider>
-    </>
+    <PeachesContext.Provider value={context}>
+      <EuiContext i18n={{ mapping: pageText }}>
+        <Intro />
+        <EuiSpacer />
+        <Steps />
+        <EuiSpacer />
+        <About />
+      </EuiContext>
+    </PeachesContext.Provider>
   );
 };
