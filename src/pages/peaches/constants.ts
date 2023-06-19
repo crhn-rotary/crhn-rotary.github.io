@@ -11,7 +11,7 @@ export const Constants = {
     /**
      * Price per box of peaches.
      */
-    price: 45,
+    price: 50,
     /**
      * Weight per box.
      */
@@ -28,11 +28,11 @@ export const Constants = {
     },
   },
   dates: {
-    afterPickup: moment('2022-08-28T00:00:00.000-0600'),
-    allowOrders: moment('2022-06-15T00:00:00.000-0600'),
-    blockOrders: moment('2022-08-16T00:00:00.000-0600'),
-    nextYear: moment('2023-06-15T00:00:00.000-0600'),
-    pickup: moment('2022-08-27T10:00:00.000-0600'),
+    afterPickup: moment('2023-08-27T00:00:00.000-0600'),
+    allowOrders: moment('2023-06-17T00:00:00.000-0600'),
+    blockOrders: moment('2023-08-16T00:00:00.000-0600'),
+    nextYear: moment('2024-06-15T00:00:00.000-0600'),
+    pickup: moment('2023-08-26T10:00:00.000-0600'),
   },
   location: {
     street: '1506 S. Wilcox St',

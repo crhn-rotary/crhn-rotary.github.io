@@ -1,10 +1,4 @@
-import {
-  EuiButton,
-  EuiContext,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiSpacer,
-} from '@elastic/eui';
+import { EuiContext, EuiSpacer } from '@elastic/eui';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import { text } from '../../text';
