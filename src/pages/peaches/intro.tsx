@@ -1,6 +1,7 @@
 import {
   EuiHorizontalRule,
   EuiImage,
+  EuiMarkdownFormat,
   EuiSplitPanel,
   EuiText,
 } from '@elastic/eui';
@@ -25,35 +26,16 @@ export const Intro: React.FC = () => (
     </EuiSplitPanel.Inner>
     <EuiSplitPanel.Inner color="subdued">
       <EuiText>
-        <h2>{useLocale('pages.peaches.fundraiser.title')}</h2>
-        <p>
-          <strong>
-            {useLocale('pages.peaches.fundraiser.offer', {
-              dollars: Constants.box.price,
-              pounds: Constants.box.weight,
-            })}
-          </strong>
-        </p>
-        <p>
-          {useLocale('pages.peaches.fundraiser.source', {
-            month_year: Constants.dates.nextYear.format('MMMM YYYY'),
+        <EuiMarkdownFormat>
+          {useLocale('pages.peaches.fundraiser.intro', {
+            dollars: Constants.box.price,
+            lastYear: Constants.dates.pickup.format('YYYY'),
+            monthYear: Constants.dates.nextYear.format('MMMM YYYY'),
+            orderByDate: Constants.dates.lastOrders.format('dddd, LL'),
+            pickupDate: Constants.dates.pickup.format('dddd, LL'),
+            pounds: Constants.box.weight,
           })}
-        </p>
-        <p>{useLocale('pages.peaches.fundraiser.desc')}</p>
-        <EuiHorizontalRule />
-        <p>
-          {useLocale('pages.peaches.fundraiser.ordering', {
-            date: Constants.dates.blockOrders.format('dddd, LL'),
-            month_year: Constants.dates.nextYear.format('MMMM YYYY'),
-          })}
-        </p>
-        <p>{useLocale('pages.peaches.fundraiser.ordering.warn')}</p>
-        <p>{useLocale('pages.peaches.fundraiser.delivery')}</p>
-        <p>
-          {useLocale('pages.peaches.fundraiser.delivery.plan', {
-            date: Constants.dates.pickup.format('dddd, LL'),
-          })}
-        </p>
+        </EuiMarkdownFormat>
       </EuiText>
     </EuiSplitPanel.Inner>
   </EuiSplitPanel.Outer>
