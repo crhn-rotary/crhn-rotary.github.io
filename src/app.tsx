@@ -16,19 +16,20 @@ import { PeachesPage } from './pages';
 export const App: React.VFC = () => (
   <EuiProvider colorMode="light">
     <EuiContext i18n={{ mapping: siteText }}>
-      <EuiPageTemplate
-        pageHeader={{
-          iconType: () => (
+      <EuiPageTemplate>
+        <EuiPageTemplate.Header
+          iconType={() => (
             <img
               alt={useLocale('header.img.alt')}
               className="euiHeaderLogo"
               src="/images/rotary-logo-color-2019.svg"
             />
-          ),
-          pageTitle: <Locale token="header.title" />,
-        }}
-      >
-        <PeachesPage />
+          )}
+          pageTitle={<Locale token="header.title" />}
+        />
+        <EuiPageTemplate.Section>
+          <PeachesPage />
+        </EuiPageTemplate.Section>
       </EuiPageTemplate>
     </EuiContext>
   </EuiProvider>
